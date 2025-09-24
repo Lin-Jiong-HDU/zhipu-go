@@ -450,6 +450,15 @@ func (s *ChatCompletionService) AddMessage(messages ...ChatCompletionMessageType
 	return s
 }
 
+// SetMessages set the messages to the chat completion
+func (s *ChatCompletionService) SetMessages(messages ...ChatCompletionMessageType) *ChatCompletionService {
+	s.messages = nil
+	for _, message := range messages {
+		s.messages = append(s.messages, message)
+	}
+	return s
+}
+
 // AddFunction add the function to the chat completion
 func (s *ChatCompletionService) AddTool(tools ...ChatCompletionTool) *ChatCompletionService {
 	for _, tool := range tools {
