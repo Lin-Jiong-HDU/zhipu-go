@@ -451,13 +451,15 @@ func (s *ChatCompletionService) AddMessage(messages ...ChatCompletionMessageType
 }
 
 // SetMessages set the messages to the chat completion
-func (s *ChatCompletionService) SetMessages(messages ...ChatCompletionMessageType) *ChatCompletionService {
+func (s *ChatCompletionService) SetMessages(messages []ChatCompletionMessage) *ChatCompletionService {
 	s.messages = nil
 	for _, message := range messages {
 		s.messages = append(s.messages, message)
 	}
 	return s
 }
+
+
 
 // AddFunction add the function to the chat completion
 func (s *ChatCompletionService) AddTool(tools ...ChatCompletionTool) *ChatCompletionService {
