@@ -459,7 +459,10 @@ func (s *ChatCompletionService) SetMessages(messages []ChatCompletionMessage) *C
 	return s
 }
 
-
+// GetMessages get the messages of the chat completion
+func (s *ChatCompletionService) GetMessages() *[]any {
+	return &s.messages
+}
 
 // AddFunction add the function to the chat completion
 func (s *ChatCompletionService) AddTool(tools ...ChatCompletionTool) *ChatCompletionService {
